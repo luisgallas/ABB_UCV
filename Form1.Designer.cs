@@ -38,13 +38,15 @@
             btnInOrden = new Button();
             btnPreOrden = new Button();
             btnPosOrden = new Button();
+            btnColorRaiz = new Button();
+            btnColorNodosInternos = new Button();
             SuspendLayout();
             // 
             // treeView
             // 
-            treeView.Location = new Point(307, 57);
+            treeView.Location = new Point(299, 34);
             treeView.Name = "treeView";
-            treeView.Size = new Size(481, 269);
+            treeView.Size = new Size(460, 292);
             treeView.TabIndex = 0;
             // 
             // txtValor
@@ -56,7 +58,7 @@
             // 
             // btnInsertar
             // 
-            btnInsertar.Location = new Point(18, 73);
+            btnInsertar.Location = new Point(12, 73);
             btnInsertar.Name = "btnInsertar";
             btnInsertar.Size = new Size(94, 29);
             btnInsertar.TabIndex = 2;
@@ -102,7 +104,7 @@
             // 
             // btnInOrden
             // 
-            btnInOrden.Location = new Point(12, 185);
+            btnInOrden.Location = new Point(12, 227);
             btnInOrden.Name = "btnInOrden";
             btnInOrden.Size = new Size(94, 29);
             btnInOrden.TabIndex = 7;
@@ -111,7 +113,7 @@
             // 
             // btnPreOrden
             // 
-            btnPreOrden.Location = new Point(12, 242);
+            btnPreOrden.Location = new Point(12, 262);
             btnPreOrden.Name = "btnPreOrden";
             btnPreOrden.Size = new Size(94, 29);
             btnPreOrden.TabIndex = 8;
@@ -127,11 +129,33 @@
             btnPosOrden.Text = "PosOrden";
             btnPosOrden.UseVisualStyleBackColor = true;
             // 
+            // btnColorRaiz
+            // 
+            btnColorRaiz.Location = new Point(12, 127);
+            btnColorRaiz.Name = "btnColorRaiz";
+            btnColorRaiz.Size = new Size(94, 29);
+            btnColorRaiz.TabIndex = 10;
+            btnColorRaiz.Text = "Color Raiz";
+            btnColorRaiz.UseVisualStyleBackColor = true;
+            btnColorRaiz.Click += btnColorRaiz_Click;
+            // 
+            // btnColorNodosInternos
+            // 
+            btnColorNodosInternos.Location = new Point(12, 162);
+            btnColorNodosInternos.Name = "btnColorNodosInternos";
+            btnColorNodosInternos.Size = new Size(120, 29);
+            btnColorNodosInternos.TabIndex = 11;
+            btnColorNodosInternos.Text = "Color Nodos in";
+            btnColorNodosInternos.UseVisualStyleBackColor = true;
+            btnColorNodosInternos.Click += btnColorNodosInternos_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnColorNodosInternos);
+            Controls.Add(btnColorRaiz);
             Controls.Add(btnPosOrden);
             Controls.Add(btnPreOrden);
             Controls.Add(btnInOrden);
@@ -161,5 +185,7 @@
         private Button btnInOrden;
         private Button btnPreOrden;
         private Button btnPosOrden;
+        private Button btnColorRaiz;
+        private Button btnColorNodosInternos;
     }
 }
