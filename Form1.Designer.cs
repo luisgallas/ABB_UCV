@@ -42,6 +42,14 @@
             btnColorNodosInternos = new Button();
             btnColorNodosTerminales = new Button();
             panelDibujo = new Panel();
+            menuStrip1 = new MenuStrip();
+            ayudaToolStripMenuItem = new ToolStripMenuItem();
+            acercaDelJuegoToolStripMenuItem = new ToolStripMenuItem();
+            autorLuisFerreiraToolStripMenuItem = new ToolStripMenuItem();
+            salirToolStripMenuItem = new ToolStripMenuItem();
+            label1 = new Label();
+            label2 = new Label();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // treeView
@@ -53,14 +61,14 @@
             // 
             // txtValor
             // 
-            txtValor.Location = new Point(135, 75);
+            txtValor.Location = new Point(106, 167);
             txtValor.Name = "txtValor";
-            txtValor.Size = new Size(125, 27);
+            txtValor.Size = new Size(57, 27);
             txtValor.TabIndex = 1;
             // 
             // btnInsertar
             // 
-            btnInsertar.Location = new Point(12, 73);
+            btnInsertar.Location = new Point(6, 165);
             btnInsertar.Name = "btnInsertar";
             btnInsertar.Size = new Size(94, 29);
             btnInsertar.TabIndex = 2;
@@ -70,7 +78,7 @@
             // 
             // btnMostrarSuma
             // 
-            btnMostrarSuma.Location = new Point(18, 361);
+            btnMostrarSuma.Location = new Point(6, 528);
             btnMostrarSuma.Name = "btnMostrarSuma";
             btnMostrarSuma.Size = new Size(94, 29);
             btnMostrarSuma.TabIndex = 3;
@@ -80,7 +88,7 @@
             // 
             // btnMostrarSumaMultiplos
             // 
-            btnMostrarSumaMultiplos.Location = new Point(146, 361);
+            btnMostrarSumaMultiplos.Location = new Point(120, 528);
             btnMostrarSumaMultiplos.Name = "btnMostrarSumaMultiplos";
             btnMostrarSumaMultiplos.Size = new Size(94, 29);
             btnMostrarSumaMultiplos.TabIndex = 4;
@@ -90,7 +98,7 @@
             // 
             // btnMostrarMaxMin
             // 
-            btnMostrarMaxMin.Location = new Point(277, 364);
+            btnMostrarMaxMin.Location = new Point(238, 528);
             btnMostrarMaxMin.Name = "btnMostrarMaxMin";
             btnMostrarMaxMin.Size = new Size(94, 29);
             btnMostrarMaxMin.TabIndex = 5;
@@ -100,7 +108,7 @@
             // 
             // btnAltura
             // 
-            btnAltura.Location = new Point(410, 364);
+            btnAltura.Location = new Point(353, 528);
             btnAltura.Name = "btnAltura";
             btnAltura.Size = new Size(94, 29);
             btnAltura.TabIndex = 6;
@@ -110,7 +118,7 @@
             // 
             // btnInOrden
             // 
-            btnInOrden.Location = new Point(12, 227);
+            btnInOrden.Location = new Point(6, 379);
             btnInOrden.Name = "btnInOrden";
             btnInOrden.Size = new Size(94, 29);
             btnInOrden.TabIndex = 7;
@@ -120,7 +128,7 @@
             // 
             // btnPreOrden
             // 
-            btnPreOrden.Location = new Point(12, 262);
+            btnPreOrden.Location = new Point(6, 427);
             btnPreOrden.Name = "btnPreOrden";
             btnPreOrden.Size = new Size(94, 29);
             btnPreOrden.TabIndex = 8;
@@ -130,7 +138,7 @@
             // 
             // btnPosOrden
             // 
-            btnPosOrden.Location = new Point(12, 297);
+            btnPosOrden.Location = new Point(6, 476);
             btnPosOrden.Name = "btnPosOrden";
             btnPosOrden.Size = new Size(94, 29);
             btnPosOrden.TabIndex = 9;
@@ -140,7 +148,7 @@
             // 
             // btnColorRaiz
             // 
-            btnColorRaiz.Location = new Point(12, 127);
+            btnColorRaiz.Location = new Point(6, 200);
             btnColorRaiz.Name = "btnColorRaiz";
             btnColorRaiz.Size = new Size(94, 29);
             btnColorRaiz.TabIndex = 10;
@@ -150,36 +158,97 @@
             // 
             // btnColorNodosInternos
             // 
-            btnColorNodosInternos.Location = new Point(12, 162);
+            btnColorNodosInternos.Location = new Point(6, 235);
             btnColorNodosInternos.Name = "btnColorNodosInternos";
-            btnColorNodosInternos.Size = new Size(120, 29);
+            btnColorNodosInternos.Size = new Size(126, 63);
             btnColorNodosInternos.TabIndex = 11;
-            btnColorNodosInternos.Text = "Color Nodos in";
+            btnColorNodosInternos.Text = "Color Nodos \r\nInternos";
+            btnColorNodosInternos.TextAlign = ContentAlignment.TopLeft;
             btnColorNodosInternos.UseVisualStyleBackColor = true;
             btnColorNodosInternos.Click += btnColorNodosInternos_Click;
             // 
             // btnColorNodosTerminales
             // 
-            btnColorNodosTerminales.Location = new Point(12, 192);
+            btnColorNodosTerminales.Location = new Point(6, 304);
             btnColorNodosTerminales.Name = "btnColorNodosTerminales";
-            btnColorNodosTerminales.Size = new Size(126, 29);
+            btnColorNodosTerminales.Size = new Size(126, 58);
             btnColorNodosTerminales.TabIndex = 12;
-            btnColorNodosTerminales.Text = "Color Nodo Ter";
+            btnColorNodosTerminales.Text = "Color Nodos\r\nTerminal";
+            btnColorNodosTerminales.TextAlign = ContentAlignment.TopLeft;
             btnColorNodosTerminales.UseVisualStyleBackColor = true;
             btnColorNodosTerminales.Click += btnColorNodosTerminales_Click;
             // 
             // panelDibujo
             // 
-            panelDibujo.Location = new Point(299, 12);
+            panelDibujo.Location = new Point(211, 165);
             panelDibujo.Name = "panelDibujo";
-            panelDibujo.Size = new Size(489, 330);
+            panelDibujo.Size = new Size(650, 327);
             panelDibujo.TabIndex = 13;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ayudaToolStripMenuItem, acercaDelJuegoToolStripMenuItem, salirToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(873, 28);
+            menuStrip1.TabIndex = 14;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            ayudaToolStripMenuItem.Size = new Size(65, 24);
+            ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // acercaDelJuegoToolStripMenuItem
+            // 
+            acercaDelJuegoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { autorLuisFerreiraToolStripMenuItem });
+            acercaDelJuegoToolStripMenuItem.Name = "acercaDelJuegoToolStripMenuItem";
+            acercaDelJuegoToolStripMenuItem.Size = new Size(135, 24);
+            acercaDelJuegoToolStripMenuItem.Text = "Acerca del juego";
+            // 
+            // autorLuisFerreiraToolStripMenuItem
+            // 
+            autorLuisFerreiraToolStripMenuItem.Name = "autorLuisFerreiraToolStripMenuItem";
+            autorLuisFerreiraToolStripMenuItem.Size = new Size(224, 26);
+            autorLuisFerreiraToolStripMenuItem.Text = "Autor: Luis Ferreira";
+            // 
+            // salirToolStripMenuItem
+            // 
+            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            salirToolStripMenuItem.Size = new Size(52, 24);
+            salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Stencil", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(353, 48);
+            label1.Name = "label1";
+            label1.Size = new Size(169, 27);
+            label1.TabIndex = 15;
+            label1.Text = "Bienvenidos";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("HP Simplified Hans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ActiveCaptionText;
+            label2.Location = new Point(255, 92);
+            label2.Name = "label2";
+            label2.Size = new Size(390, 23);
+            label2.TabIndex = 16;
+            label2.Text = "Simulador de Arbol Binario de Busqueda";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(873, 569);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(panelDibujo);
             Controls.Add(btnColorNodosTerminales);
             Controls.Add(btnColorNodosInternos);
@@ -194,9 +263,13 @@
             Controls.Add(btnInsertar);
             Controls.Add(txtValor);
             Controls.Add(treeView);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -217,5 +290,12 @@
         private Button btnColorNodosInternos;
         private Button btnColorNodosTerminales;
         private Panel panelDibujo;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem ayudaToolStripMenuItem;
+        private ToolStripMenuItem acercaDelJuegoToolStripMenuItem;
+        private ToolStripMenuItem autorLuisFerreiraToolStripMenuItem;
+        private ToolStripMenuItem salirToolStripMenuItem;
+        private Label label1;
+        private Label label2;
     }
 }

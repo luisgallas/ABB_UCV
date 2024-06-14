@@ -13,13 +13,17 @@ namespace ABB_UCV
         public Form1()
         {
             InitializeComponent();
+            /*Bitmap img = new Bitmap(Application.StartupPath + @"\image\uca.jpg");
+            this.BackgroundImage = img;
+            this.BackgroundImageLayout = ImageLayout.Stretch; */
             arbol = new ArbolBinario();
             treeDrawer = new TreeDrawer(arbol, panelDibujo, colorRaiz, colorNodosInternos, colorNodosTerminales);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //this.BackgroundImage = Image.FromFile("\"C:\\Users\\pedfe\\OneDrive\\Pictures\\uca.png\"");
+            //this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void btnInsertar_Click(object sender, EventArgs e)
@@ -133,7 +137,7 @@ namespace ABB_UCV
             int suma = arbol.SumaElementos(arbol.Raiz);
             MessageBox.Show($"Suma de los elementos del árbol: {suma}");
         }
-
+        //metodo para mostrar los multiplos 
         private void btnMostrarSumaMultiplos_Click(object sender, EventArgs e)
         {
             int suma2 = arbol.SumaMultiplos(arbol.Raiz, 2);
@@ -141,7 +145,7 @@ namespace ABB_UCV
             int suma5 = arbol.SumaMultiplos(arbol.Raiz, 5);
             MessageBox.Show($"Suma de múltiplos de 2: {suma2}\nSuma de múltiplos de 3: {suma3}\nSuma de múltiplos de 5: {suma5}");
         }
-
+        //metodo para mostrar el maximo y minimo del arbol
         private void btnMostrarMaxMin_Click(object sender, EventArgs e)
         {
             try
@@ -155,7 +159,7 @@ namespace ABB_UCV
                 MessageBox.Show(ex.Message);
             }
         }
-
+        //metodo para mostrar la altura del arbol
         private void btnAltura_Click(object sender, EventArgs e)
         {
             int altura = arbol.Altura(arbol.Raiz);
@@ -181,6 +185,11 @@ namespace ABB_UCV
             List<int> elementos = new List<int>();
             arbol.PosOrden(arbol.Raiz, valor => elementos.Add(valor));
             MessageBox.Show($"Recorrido PosOrden: {string.Join(", ", elementos)}");
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
