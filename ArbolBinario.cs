@@ -37,6 +37,31 @@ namespace ABB_UCV
             }
             return nodo;
         }
+       //metodo que verifica si el valor ya es ingresado
+        public bool Contiene(int valor)
+        {
+            return ContieneRecursivo(Raiz, valor);
+        }
+
+        private bool ContieneRecursivo(Nodo nodo, int valor)
+        {
+            if (nodo == null)
+            {
+                return false;
+            }
+            if (nodo.Valor == valor)
+            {
+                return true;
+            }
+            if (valor < nodo.Valor)
+            {
+                return ContieneRecursivo(nodo.Izquierdo, valor);
+            }
+            else
+            {
+                return ContieneRecursivo(nodo.Derecho, valor);
+            }
+        }
 
         // Método para calcular la suma de los elementos del árbol
         public int SumaElementos(Nodo nodo)

@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace ABB_UCV
 {
     public partial class Form1 : Form
@@ -28,16 +30,39 @@ namespace ABB_UCV
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtValor.Text, out int valor))
+            if (int.TryParse(txtValor.Text, out int valor ))
             {
-                arbol.Insertar(valor);
-                treeDrawer.Redibujar();
+                //arbol.Insertar(valor);
+                //treeDrawer.Redibujar();
+                if (valor <= 0 || valor >= 100)
+                {
+                    MessageBox.Show("Error. Debe ingresar un valor entre 1 y 99");
+                }
+                else if (arbol.Contiene(valor))
+                    {
+                        MessageBox.Show($"El valor {valor} ya ha sido ingresado");
+                    }
+                else
+                {
+                    arbol.Insertar(valor);
+                    treeDrawer.Redibujar();
+                }
             }
             else
             {
+                
                 MessageBox.Show("Ingrese un valor válido.");
             }
-
+           /*if (txtValor.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un valor valido");
+            }
+           else
+            {
+                valor = int.Parse(txtValor.Text);
+                if (valor <= 0 || valor >= 100)
+                    MessageBox.Show("Error de ingreso. Solo recibe valores del 1 al 99");
+            }*/
         }
         // Método para actualizar el TreeView
         private void ActualizarTreeView()
