@@ -15,7 +15,7 @@ namespace ABB_UCV
         public Form1()
         {
             InitializeComponent();
-            /*Bitmap img = new Bitmap(Application.StartupPath + @"\image\uca.jpg");
+           /* Bitmap img = new Bitmap(Application.StartupPath + @"\image\uca.jpg");
             this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch; */
             arbol = new ArbolBinario();
@@ -46,6 +46,7 @@ namespace ABB_UCV
                 {
                     arbol.Insertar(valor);
                     treeDrawer.Redibujar();
+                    txtValor.Text = "";
                 }
             }
             else

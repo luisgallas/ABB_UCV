@@ -49,6 +49,8 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             label2 = new Label();
+            reglaToolStripMenuItem = new ToolStripMenuItem();
+            fontDialog1 = new FontDialog();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -197,6 +199,7 @@
             // 
             // ayudaToolStripMenuItem
             // 
+            ayudaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { reglaToolStripMenuItem });
             ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             ayudaToolStripMenuItem.Size = new Size(65, 24);
             ayudaToolStripMenuItem.Text = "Ayuda";
@@ -211,7 +214,7 @@
             // autorLuisFerreiraToolStripMenuItem
             // 
             autorLuisFerreiraToolStripMenuItem.Name = "autorLuisFerreiraToolStripMenuItem";
-            autorLuisFerreiraToolStripMenuItem.Size = new Size(224, 26);
+            autorLuisFerreiraToolStripMenuItem.Size = new Size(215, 26);
             autorLuisFerreiraToolStripMenuItem.Text = "Autor: Luis Ferreira";
             // 
             // salirToolStripMenuItem
@@ -224,6 +227,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.ButtonHighlight;
             label1.Font = new Font("Stencil", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(353, 48);
             label1.Name = "label1";
@@ -234,6 +238,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = SystemColors.ButtonHighlight;
             label2.Font = new Font("HP Simplified Hans", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.Location = new Point(255, 92);
@@ -241,6 +246,12 @@
             label2.Size = new Size(390, 23);
             label2.TabIndex = 16;
             label2.Text = "Simulador de Arbol Binario de Busqueda";
+            // 
+            // reglaToolStripMenuItem
+            // 
+            reglaToolStripMenuItem.Name = "reglaToolStripMenuItem";
+            reglaToolStripMenuItem.Size = new Size(224, 26);
+            reglaToolStripMenuItem.Text = "Reglas";
             // 
             // Form1
             // 
@@ -297,5 +308,7 @@
         private ToolStripMenuItem salirToolStripMenuItem;
         private Label label1;
         private Label label2;
+        private ToolStripMenuItem reglaToolStripMenuItem;
+        private FontDialog fontDialog1;
     }
 }
