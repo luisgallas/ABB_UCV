@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            treeView = new TreeView();
             txtValor = new TextBox();
             btnInsertar = new Button();
             btnMostrarSuma = new Button();
@@ -41,25 +40,21 @@
             btnColorRaiz = new Button();
             btnColorNodosInternos = new Button();
             btnColorNodosTerminales = new Button();
-            panelDibujo = new Panel();
+            panelArbol = new Panel();
             menuStrip1 = new MenuStrip();
             ayudaToolStripMenuItem = new ToolStripMenuItem();
+            reglaToolStripMenuItem = new ToolStripMenuItem();
             acercaDelJuegoToolStripMenuItem = new ToolStripMenuItem();
             autorLuisFerreiraToolStripMenuItem = new ToolStripMenuItem();
             salirToolStripMenuItem = new ToolStripMenuItem();
             label1 = new Label();
             label2 = new Label();
-            reglaToolStripMenuItem = new ToolStripMenuItem();
             fontDialog1 = new FontDialog();
+            treeView = new TreeView();
+            btnAvanzar = new Button();
+            btnReiniciar = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // treeView
-            // 
-            treeView.Location = new Point(778, 12);
-            treeView.Name = "treeView";
-            treeView.Size = new Size(10, 10);
-            treeView.TabIndex = 0;
             // 
             // txtValor
             // 
@@ -80,42 +75,47 @@
             // 
             // btnMostrarSuma
             // 
+            btnMostrarSuma.BackColor = Color.FromArgb(0, 192, 192);
             btnMostrarSuma.Location = new Point(6, 528);
             btnMostrarSuma.Name = "btnMostrarSuma";
             btnMostrarSuma.Size = new Size(94, 29);
             btnMostrarSuma.TabIndex = 3;
             btnMostrarSuma.Text = "Suma";
-            btnMostrarSuma.UseVisualStyleBackColor = true;
+            btnMostrarSuma.UseVisualStyleBackColor = false;
             btnMostrarSuma.Click += btnMostrarSuma_Click;
             // 
             // btnMostrarSumaMultiplos
             // 
+            btnMostrarSumaMultiplos.BackColor = Color.FromArgb(0, 192, 192);
+            btnMostrarSumaMultiplos.ForeColor = Color.Black;
             btnMostrarSumaMultiplos.Location = new Point(120, 528);
             btnMostrarSumaMultiplos.Name = "btnMostrarSumaMultiplos";
             btnMostrarSumaMultiplos.Size = new Size(94, 29);
             btnMostrarSumaMultiplos.TabIndex = 4;
             btnMostrarSumaMultiplos.Text = "Multiplos";
-            btnMostrarSumaMultiplos.UseVisualStyleBackColor = true;
+            btnMostrarSumaMultiplos.UseVisualStyleBackColor = false;
             btnMostrarSumaMultiplos.Click += btnMostrarSumaMultiplos_Click;
             // 
             // btnMostrarMaxMin
             // 
+            btnMostrarMaxMin.BackColor = Color.FromArgb(0, 192, 192);
             btnMostrarMaxMin.Location = new Point(238, 528);
             btnMostrarMaxMin.Name = "btnMostrarMaxMin";
             btnMostrarMaxMin.Size = new Size(94, 29);
             btnMostrarMaxMin.TabIndex = 5;
             btnMostrarMaxMin.Text = "Max y Min";
-            btnMostrarMaxMin.UseVisualStyleBackColor = true;
+            btnMostrarMaxMin.UseVisualStyleBackColor = false;
             btnMostrarMaxMin.Click += btnMostrarMaxMin_Click;
             // 
             // btnAltura
             // 
+            btnAltura.BackColor = Color.FromArgb(0, 192, 192);
             btnAltura.Location = new Point(353, 528);
             btnAltura.Name = "btnAltura";
             btnAltura.Size = new Size(94, 29);
             btnAltura.TabIndex = 6;
             btnAltura.Text = "Altura";
-            btnAltura.UseVisualStyleBackColor = true;
+            btnAltura.UseVisualStyleBackColor = false;
             btnAltura.Click += btnAltura_Click;
             // 
             // btnInOrden
@@ -180,12 +180,12 @@
             btnColorNodosTerminales.UseVisualStyleBackColor = true;
             btnColorNodosTerminales.Click += btnColorNodosTerminales_Click;
             // 
-            // panelDibujo
+            // panelArbol
             // 
-            panelDibujo.Location = new Point(211, 165);
-            panelDibujo.Name = "panelDibujo";
-            panelDibujo.Size = new Size(650, 327);
-            panelDibujo.TabIndex = 13;
+            panelArbol.Location = new Point(169, 148);
+            panelArbol.Name = "panelArbol";
+            panelArbol.Size = new Size(692, 374);
+            panelArbol.TabIndex = 13;
             // 
             // menuStrip1
             // 
@@ -203,6 +203,12 @@
             ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             ayudaToolStripMenuItem.Size = new Size(65, 24);
             ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // reglaToolStripMenuItem
+            // 
+            reglaToolStripMenuItem.Name = "reglaToolStripMenuItem";
+            reglaToolStripMenuItem.Size = new Size(136, 26);
+            reglaToolStripMenuItem.Text = "Reglas";
             // 
             // acercaDelJuegoToolStripMenuItem
             // 
@@ -247,20 +253,45 @@
             label2.TabIndex = 16;
             label2.Text = "Simulador de Arbol Binario de Busqueda";
             // 
-            // reglaToolStripMenuItem
+            // treeView
             // 
-            reglaToolStripMenuItem.Name = "reglaToolStripMenuItem";
-            reglaToolStripMenuItem.Size = new Size(224, 26);
-            reglaToolStripMenuItem.Text = "Reglas";
+            treeView.Location = new Point(801, 48);
+            treeView.Name = "treeView";
+            treeView.Size = new Size(10, 10);
+            treeView.TabIndex = 17;
+            // 
+            // btnAvanzar
+            // 
+            btnAvanzar.Location = new Point(470, 528);
+            btnAvanzar.Name = "btnAvanzar";
+            btnAvanzar.Size = new Size(94, 29);
+            btnAvanzar.TabIndex = 18;
+            btnAvanzar.Text = "Avanzar";
+            btnAvanzar.UseVisualStyleBackColor = true;
+            btnAvanzar.Click += btnAvanzar_Click;
+            // 
+            // btnReiniciar
+            // 
+            btnReiniciar.Location = new Point(582, 528);
+            btnReiniciar.Name = "btnReiniciar";
+            btnReiniciar.Size = new Size(94, 29);
+            btnReiniciar.TabIndex = 19;
+            btnReiniciar.Text = "Reiniciar";
+            btnReiniciar.UseVisualStyleBackColor = true;
+            btnReiniciar.Click += btnReiniciar_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(873, 569);
+            Controls.Add(btnReiniciar);
+            Controls.Add(btnAvanzar);
+            Controls.Add(treeView);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(panelDibujo);
+            Controls.Add(panelArbol);
             Controls.Add(btnColorNodosTerminales);
             Controls.Add(btnColorNodosInternos);
             Controls.Add(btnColorRaiz);
@@ -273,11 +304,10 @@
             Controls.Add(btnMostrarSuma);
             Controls.Add(btnInsertar);
             Controls.Add(txtValor);
-            Controls.Add(treeView);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Simulador de ABB";
             Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -286,8 +316,6 @@
         }
 
         #endregion
-
-        private TreeView treeView;
         private TextBox txtValor;
         private Button btnInsertar;
         private Button btnMostrarSuma;
@@ -300,7 +328,7 @@
         private Button btnColorRaiz;
         private Button btnColorNodosInternos;
         private Button btnColorNodosTerminales;
-        private Panel panelDibujo;
+        private Panel panelArbol;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem ayudaToolStripMenuItem;
         private ToolStripMenuItem acercaDelJuegoToolStripMenuItem;
@@ -310,5 +338,9 @@
         private Label label2;
         private ToolStripMenuItem reglaToolStripMenuItem;
         private FontDialog fontDialog1;
+        private TreeView treeView;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private Button btnAvanzar;
+        private Button btnReiniciar;
     }
 }

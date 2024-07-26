@@ -14,13 +14,61 @@ namespace ABB_UCV
         {
             Raiz = null;
         }
+        
+        public List<Nodo> ObtenerRecorridoEnOrden()//Obtiene la lista de nodos en recorrido en orden.
+        {
+            List<Nodo> recorrido = new List<Nodo>();
+            RecorridoEnOrden(Raiz, recorrido);
+            return recorrido;
+        }
+        //metodo para recorrido en orden 
+        private void RecorridoEnOrden(Nodo nodo, List<Nodo> recorrido)
+        {
+            if (nodo == null) return;
+            RecorridoEnOrden(nodo.Izquierdo, recorrido);
+            recorrido.Add(nodo);
+            RecorridoEnOrden(nodo.Derecho, recorrido);
+         
+        }
 
+        public List<Nodo> ObtenerRecorridoPreOrden()//Obtiene la lista de nodos en recorrido en Preorden.
+        {
+            List<Nodo> recorrido = new List<Nodo>();
+            RecorridoPreOrden(Raiz, recorrido);
+            return recorrido;
+        }
+        //metodo para el recorrido en preorden
+        private void RecorridoPreOrden(Nodo nodo, List<Nodo> recorrido)
+        {
+            if (nodo == null) return;
+            recorrido.Add(nodo);
+            RecorridoPreOrden(nodo.Izquierdo, recorrido);
+            RecorridoPreOrden(nodo.Derecho, recorrido);
+            
+        }
+
+        public List<Nodo> ObtenerRecorridoPostOrden()////Obtiene la lista de nodos en recorrido en Postorden.
+        {
+            List<Nodo> recorrido = new List<Nodo>();
+            RecorridoPostOrden(Raiz, recorrido);
+            return recorrido;
+        }
+        //metodo para el recorrido es postorden
+        private void RecorridoPostOrden(Nodo nodo, List<Nodo> recorrido)
+        {
+            if (nodo == null) return;
+            RecorridoPostOrden(nodo.Izquierdo, recorrido);
+            RecorridoPostOrden(nodo.Derecho, recorrido);
+            recorrido.Add(nodo);
+        }
+
+        
         // Método para insertar un valor en el árbol
         public void Insertar(int valor)
         {
             Raiz = InsertarRecursivo(Raiz, valor);
         }
-
+        //metodo para para verificar si insertar el valor hacia el nodo izquierdo o hacia el nodo derecho
         private Nodo InsertarRecursivo(Nodo nodo, int valor)
         {
             if (nodo == null)
@@ -37,12 +85,12 @@ namespace ABB_UCV
             }
             return nodo;
         }
-       //metodo que verifica si el valor ya es ingresado
+       
         public bool Contiene(int valor)
         {
             return ContieneRecursivo(Raiz, valor);
         }
-
+        //metodo que verifica que si el valor ya ha sido ingresado 
         private bool ContieneRecursivo(Nodo nodo, int valor)
         {
             if (nodo == null)

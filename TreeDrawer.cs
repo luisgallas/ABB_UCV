@@ -11,19 +11,25 @@ namespace ABB_UCV
 {
     internal class TreeDrawer
     {
+        
+        
         private ArbolBinario arbol;
         private Panel panel;
         private Color colorRaiz;
         private Color colorNodosInternos;
         private Color colorNodosTerminales;
+        private Color colorRecorrido;
+        private List<Nodo> recorridoActual;
+        private int indiceRecorrido;
 
-        public TreeDrawer(ArbolBinario arbol, Panel panel, Color colorRaiz, Color colorNodosInternos, Color colorNodosTerminales)
+        public TreeDrawer(ArbolBinario arbol, Panel panel, Color colorRaiz, Color colorNodosInternos, Color colorNodosTerminales, Color colorRecorrido)
         {
             this.arbol = arbol;
             this.panel = panel;
             this.colorRaiz = colorRaiz;
             this.colorNodosInternos = colorNodosInternos;
             this.colorNodosTerminales = colorNodosTerminales;
+            this.colorRecorrido = colorRecorrido;
             this.panel.Paint += new PaintEventHandler(DibujarArbol);
         }
 
@@ -51,6 +57,12 @@ namespace ABB_UCV
                 colorNodo = colorNodosTerminales;
             }
 
+            // Verificar si el nodo está en el recorrido actual
+            if (recorridoActual != null && recorridoActual.Contains(nodo) && recorridoActual.IndexOf(nodo) <= indiceRecorrido)
+            {
+                colorNodo = colorRecorrido;
+            }
+
             // Dibujar la conexión al nodo izquierdo
             if (nodo.Izquierdo != null)
             {
@@ -72,9 +84,33 @@ namespace ABB_UCV
             graphics.DrawString(nodo.Valor.ToString(), new Font("Arial", 12), Brushes.White, x - 10, y - 10);
         }
 
+        public void IniciarRecorrido(List<Nodo> recorrido)
+        {
+            recorridoActual = recorrido;
+            indiceRecorrido = -1; // Inicia antes del primer nodo
+            panel.Invalidate();
+        }
+
+        public void AvanzarRecorrido()
+        {
+            if (recorridoActual != null && indiceRecorrido < recorridoActual.Count - 1)
+            {
+                indiceRecorrido++;
+                panel.Invalidate();
+            }
+        }
+
+        public void ReiniciarColores()
+        {
+            recorridoActual = null;
+            indiceRecorrido = -1;
+            panel.Invalidate();
+        }
         public void Redibujar()
         {
             panel.Invalidate();
         }
     }
+    
 }
+
