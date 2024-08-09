@@ -179,5 +179,56 @@ namespace ABB_UCV
             PosOrden(nodo.Derecho, accion);
             accion(nodo.Valor);
         }
+        
+         public Nodo Rai { get; set; }
+
+    // 
+
+        public int ContarNodos(Nodo nodo)
+         {
+             if (nodo == null)
+             return 0;
+
+             return 1 + ContarNodos(nodo.Izquierdo) + ContarNodos(nodo.Derecho);
+         }
+
+         public int ObtenerCantidadNodos()
+        {
+            return ContarNodos(Raiz);
+        }
+         
+        
+         public int ContarNodosHojas(Nodo nodo)
+        {
+            if (nodo == null)
+                return 0;
+
+            if (nodo.Izquierdo == null && nodo.Derecho == null)
+                return 1;
+
+            return ContarNodosHojas(nodo.Izquierdo) + ContarNodosHojas(nodo.Derecho);
+        }
+
+        public int ObtenerCantidadNodosHojas()
+        {
+            return ContarNodosHojas(Raiz);
+        }
+        //
+        public Nodo EliminarMinimo(Nodo nodo)
+        {
+            if (nodo == null)
+                return null;
+
+            if (nodo.Izquierdo == null)
+                return nodo.Derecho; // Si no tiene hijo izquierdo, su hijo derecho lo reemplaza
+
+            nodo.Izquierdo = EliminarMinimo(nodo.Izquierdo); // Continuar buscando el mínimo
+            return nodo;
+        }
+
+        public void EliminarNodoMinimo()
+        {
+            Raiz = EliminarMinimo(Raiz);
+        }
     }
 }

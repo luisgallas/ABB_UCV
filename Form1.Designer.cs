@@ -53,6 +53,9 @@
             treeView = new TreeView();
             btnAvanzar = new Button();
             btnReiniciar = new Button();
+            btnMostrarCantidadNodos = new Button();
+            btnMostrarCantidadNodosHojas = new Button();
+            btnEliminarNodoMinimo = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -193,7 +196,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { ayudaToolStripMenuItem, acercaDelJuegoToolStripMenuItem, salirToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(873, 28);
+            menuStrip1.Size = new Size(896, 28);
             menuStrip1.TabIndex = 14;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -280,12 +283,45 @@
             btnReiniciar.UseVisualStyleBackColor = true;
             btnReiniciar.Click += btnReiniciar_Click;
             // 
+            // btnMostrarCantidadNodos
+            // 
+            btnMostrarCantidadNodos.Location = new Point(682, 528);
+            btnMostrarCantidadNodos.Name = "btnMostrarCantidadNodos";
+            btnMostrarCantidadNodos.Size = new Size(129, 29);
+            btnMostrarCantidadNodos.TabIndex = 20;
+            btnMostrarCantidadNodos.Text = "MostrarNodos";
+            btnMostrarCantidadNodos.UseVisualStyleBackColor = true;
+            btnMostrarCantidadNodos.Click += btnMostrarCantidadNodos_Click;
+            // 
+            // btnMostrarCantidadNodosHojas
+            // 
+            btnMostrarCantidadNodosHojas.Location = new Point(30, 570);
+            btnMostrarCantidadNodosHojas.Name = "btnMostrarCantidadNodosHojas";
+            btnMostrarCantidadNodosHojas.Size = new Size(102, 29);
+            btnMostrarCantidadNodosHojas.TabIndex = 21;
+            btnMostrarCantidadNodosHojas.Text = "NodoHojas";
+            btnMostrarCantidadNodosHojas.UseVisualStyleBackColor = true;
+            btnMostrarCantidadNodosHojas.Click += btnMostrarCantidadNodosHojas_Click;
+            // 
+            // btnEliminarNodoMinimo
+            // 
+            btnEliminarNodoMinimo.Location = new Point(177, 571);
+            btnEliminarNodoMinimo.Name = "btnEliminarNodoMinimo";
+            btnEliminarNodoMinimo.Size = new Size(155, 29);
+            btnEliminarNodoMinimo.TabIndex = 22;
+            btnEliminarNodoMinimo.Text = "Eliminar minimo";
+            btnEliminarNodoMinimo.UseVisualStyleBackColor = true;
+            btnEliminarNodoMinimo.Click += btnEliminarNodoMinimo_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(873, 569);
+            ClientSize = new Size(896, 607);
+            Controls.Add(btnEliminarNodoMinimo);
+            Controls.Add(btnMostrarCantidadNodosHojas);
+            Controls.Add(btnMostrarCantidadNodos);
             Controls.Add(btnReiniciar);
             Controls.Add(btnAvanzar);
             Controls.Add(treeView);
@@ -342,5 +378,8 @@
         private ToolStripMenuItem toolStripMenuItem1;
         private Button btnAvanzar;
         private Button btnReiniciar;
+        private Button btnMostrarCantidadNodos;
+        private Button btnMostrarCantidadNodosHojas;
+        private Button btnEliminarNodoMinimo;
     }
 }

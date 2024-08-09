@@ -7,10 +7,10 @@ namespace ABB_UCV
         //private ArbolBinario arbol; // Instancia del árbol binario
         private ArbolBinario arbol; // Instancia del árbol binario
         private TreeDrawer treeDrawer;
-        
+
         private List<Nodo> recorridoActual;
         // Variables para almacenar los colores seleccionados
-       // private Panel panelArbol;
+        // private Panel panelArbol;
         private Color colorRaiz = Color.Red;
         private Color colorNodosInternos = Color.Green;
         private Color colorNodosTerminales = Color.Blue;
@@ -149,7 +149,7 @@ namespace ABB_UCV
                 {
                     colorNodosInternos = colorDialog.Color;
                     treeDrawer = new TreeDrawer(arbol, panelArbol, Color.Red, Color.Green, Color.Blue, Color.Yellow);
-                   // treeDrawer = new TreeDrawer(arbol, panelDibujo, colorRaiz, colorNodosInternos, colorNodosTerminales);
+                    // treeDrawer = new TreeDrawer(arbol, panelDibujo, colorRaiz, colorNodosInternos, colorNodosTerminales);
                     treeDrawer.Redibujar();
                 }
             }
@@ -163,7 +163,7 @@ namespace ABB_UCV
                 {
                     colorNodosTerminales = colorDialog.Color;
                     treeDrawer = new TreeDrawer(arbol, panelArbol, Color.Red, Color.Green, Color.Blue, Color.Yellow);
-                   // treeDrawer = new TreeDrawer(arbol, panelDibujo, colorRaiz, colorNodosInternos, colorNodosTerminales);
+                    // treeDrawer = new TreeDrawer(arbol, panelDibujo, colorRaiz, colorNodosInternos, colorNodosTerminales);
                     treeDrawer.Redibujar();
                 }
             }
@@ -199,7 +199,7 @@ namespace ABB_UCV
         //metodo para mostrar la altura del arbol
         private void btnAltura_Click(object sender, EventArgs e)
         {
-            int altura = arbol.Altura(arbol.Raiz);
+            int altura = arbol.Altura(arbol.Raiz) - 1;
             MessageBox.Show($"Altura del árbol: {altura}");
         }
 
@@ -246,6 +246,32 @@ namespace ABB_UCV
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             treeDrawer.ReiniciarColores();
+        }
+
+        private void btnMostrarCantidadNodos_Click(object sender, EventArgs e)
+        {
+            int cantidadNodos = arbol.ObtenerCantidadNodos();
+            MessageBox.Show($"La cantidad total de nodos en el árbol es: {cantidadNodos}");
+        }
+
+        private void btnMostrarCantidadNodosHojas_Click(object sender, EventArgs e)
+        {
+            int cantidadNodosHojas = arbol.ObtenerCantidadNodosHojas();
+            MessageBox.Show($"La cantidad de nodos hojas en el árbol es: {cantidadNodosHojas}");
+        }
+
+        private void btnEliminarNodoMinimo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                arbol.EliminarNodoMinimo();
+                MessageBox.Show("El nodo con el valor mínimo ha sido eliminado.");
+                treeDrawer.Redibujar(); // Redibujar el árbol después de la eliminación
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
